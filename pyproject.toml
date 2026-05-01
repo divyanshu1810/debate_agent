@@ -1,0 +1,23 @@
+[project]
+name = "debate-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "langchain",
+  "langchain-cohere",
+  "langgraph",
+  "fastmcp",
+  "langfuse",
+  "llm-guard",
+  "tavily-python",
+  "cohere",
+  "streamlit",
+  "python-dotenv",
+  "httpx",
+  "pydantic",
+  "watchdog>=6.0.0",
+]
