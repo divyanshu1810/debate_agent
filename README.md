@@ -32,10 +32,10 @@ Agents run in a loop for a configurable number of rounds, then hand off to the j
                                     └── Langfuse tracing (port configured) │
                                               │
                                     ┌─────────▼──────────┐
-                                    │  FastMCP server     │
-                                    │  port 8001          │
-                                    │  • search_tool      │
-                                    │  • summarise_tool   │
+                                    │  FastMCP server    │
+                                    │  port 8001         │
+                                    │  • search_tool     │
+                                    │  • summarise_tool  │
                                     └────────────────────┘
 ```
 
