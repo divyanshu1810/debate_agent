@@ -23,13 +23,14 @@ Agents run in a loop for a configurable number of rounds, then hand off to the j
 ## Architecture
 
 ```
-┌─────────────┐      HTTP       ┌──────────────────────────────────────────┐
-│  Streamlit  │ ─── POST /debate ──▶  FastAPI  (port 8000)                │
+┌─────────────┐      HTTP           ┌─────────────────────────────────────┐
+│  Streamlit  │ ─── POST /debate ──▶| FastAPI  (port 8000)                │
 │  UI         │ ◀── JSON result ──  ├── Safety scan (LLM-Guard)           │
-│  port 8501  │                     ├── LangGraph debate loop              │
-└─────────────┘                     │     Proponent → Opponent → (repeat)  │
-                                    │     └── Judge (final verdict)        │
-                                    └── Langfuse tracing (port configured) │
+│  port 8501  │                     ├── LangGraph debate loop             │
+└─────────────┘                     │     Proponent → Opponent → (repeat) │
+                                    │     └── Judge (final verdict)       │
+                                    │  Langfuse tracing (port configured) │
+                                    └─────────────────────────────────────┘
                                               │
                                     ┌─────────▼──────────┐
                                     │  FastMCP server    │
